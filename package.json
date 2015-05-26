@@ -4,8 +4,23 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "watchify src/js/app.js -o build/js/app.js"
+  },
+  "browserify": {
+    "transform": [
+      "reactify"
+    ]
   },
   "author": "makotot",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^3.9.3",
+    "react": "^0.13.3",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "browserify": "^10.2.1",
+    "reactify": "^1.1.1",
+    "watchify": "^3.2.1"
+  }
 }
