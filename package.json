@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "watchify src/js/app.js -o build/js/app.js"
+    "start": "watchify src/js/app.jsx -o build/js/app.js"
   },
   "browserify": {
     "transform": [
@@ -15,7 +15,9 @@
   "license": "MIT",
   "dependencies": {
     "lodash": "^3.9.3",
+    "npm": "^2.10.1",
     "react": "^0.13.3",
+    "semver": "^4.3.4",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
