@@ -1,8 +1,37 @@
 const React = require('react'),
-  _ = require('lodash');
+  _ = require('lodash'),
+  semver = require('semver'),
+  packageJson = require('package-json');
 
 var pkg = require('./../../package.json'),
   dependencies = pkg.dependencies;
+
+
+
+function getPackageInfo (pkgName) {
+
+  return new Promise(function (resolve, reject) {
+    packageJson(pkgName, function (err, json) {
+      if (err) {
+        reject(err);
+      }
+
+      resolve(json);
+    });
+  });
+}
+
+
+
+Object.keys(dependencies).forEach(function (name) {
+  getPackageInfo(name)
+    .then(function (res) {
+      console.log(res)
+    })
+    .catch(function (err) {
+      throw err;
+    });
+});
 
 
 
